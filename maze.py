@@ -151,3 +151,33 @@ class Maze:
                 self._cells[i][j].draw_move(self._cells[i][j-1],undo=True)
         
         return False
+ # working on bfs   
+    def solve_bfs(self):
+        self._animate()
+        self._cells[i][j].visited = True
+        while 
+        
+        if i == self._num_cols - 1 and j == self._num_rows - 1:
+            return True
+        
+    def breadth_first_search(self, v):
+        visited = []
+        to_visit = [start]
+        path = {start: None}
+        while to_visit:
+            current_vertex = to_visit.pop(0)
+            visited.append(current_vertex)
+            if current_vertex == end:
+                path_list = []
+                while current_vertex is not None:
+                    path_list.append(current_vertex)
+                    current_vertex = path[current_vertex]
+                path_list.reverse()
+                return path_list
+
+            sorted_neighbors = sorted(self.graph[current_vertex])
+            for neighbor in sorted_neighbors:
+                if neighbor not in visited and neighbor not in to_visit:
+                    to_visit.append(neighbor)
+                    path[neighbor] = current_vertex
+        return None
